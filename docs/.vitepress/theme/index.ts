@@ -4,14 +4,16 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 // import './style.css'
 import './styles/index.css'
+import profileCard from './components/profileCard.vue'
 
 let homePageStyle: HTMLStyleElement | undefined
 
+// https://vitepress.dev/guide/extending-default-theme#layout-slots
 export default {
   extends: DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
-      // https://vitepress.dev/guide/extending-default-theme#layout-slots
+      'home-hero-image': () => h(profileCard)
     })
   },
   enhanceApp({ app, router, siteData }) {
@@ -38,7 +40,6 @@ if (typeof window !== 'undefined') {
 
 // Rainbow animation - home page only
 function updateHomePageStyle(value: boolean) {
-  console.log('Home page style:', value)
   if (value) {
     if (homePageStyle) return
 
