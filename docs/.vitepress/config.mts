@@ -2,27 +2,39 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Jemson Wong",
-  description: "User Manual of Me",
+  title: "JW",
+  description: "Manual of Me",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: '/logo.png',
+
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'About', link: '/about' },
+      { text: 'Projects', link: '/projects' },
+      { text: 'Blog', link: '/blog' }
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+    sidebar: {
+      '/sdf': [
+        {
+          text: 'Navigation',
+          items: [
+            { text: 'About Me', link: '/about' },
+            { text: 'Projects', link: '/projects' },
+            { text: 'Blog', link: '/blog' }
+          ]
+        }
+      ]
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/majestic-Fire' }
-    ]
+    ],
+
+    footer: {
+      message: 'Built with VitePress',
+      copyright: 'Copyright © 2025 Jemson Wong'
+    }
   }
 })
