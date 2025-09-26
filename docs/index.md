@@ -2,11 +2,12 @@
 layout: home
 
 hero:
-  name: Jemson
-  text: 
+  name: Jemson Wong
+  text: Full-Stack Developer
+  tagline: Building web applications and immersive experiences.
   image:
     src: ./profile.png
-    alt: Wong Jemson Jun Peng
+    alt: Profile Picture
   actions:
     - theme: brand
       text: About Me
