@@ -3,7 +3,8 @@
 </script>
 
 <template>
-  <div class="container noselect">
+
+  <div id="cardContainer" class="noselect image-src">
     <div class="canvas">
       <div class="tracker tr-1"></div>
       <div class="tracker tr-2"></div>
@@ -30,8 +31,10 @@
       <div class="tracker tr-23"></div>
       <div class="tracker tr-24"></div>
       <div class="tracker tr-25"></div>
-      <div id="card">
-        <img src="https://picsum.photos/190/254" alt="Card Image" class="card-image">
+      <div id="card" class="">
+        <!-- <img src="https://picsum.photos/1000/400" alt="Card Image" class=""> -->
+        <!-- <img src="https://picsum.photos/400/1000" alt="Card Image" class=""> -->
+        <img src="/profile.png" alt="Profile Picture by Gemini" class="">
       </div>
     </div>
   </div>
@@ -41,40 +44,59 @@
 /*works janky on mobile :<*/
 
 /* ===== Container ===== */
-.container {
-  position: relative;
-  width: 190px;
-  height: 254px;
+#cardContainer {
+  /* border: 5px solid orange; */
+  position: absolute;
+  /* Use image-src for size & position */
+  /* inset: 0; */
+  /* width: 190px; */
+  /* height: 254px; */
+  /* width: 100%; */
+  /* height: 100%; */
+  object-fit: contain;
   transition: 200ms;
 }
 
-.container:active {
-  width: 180px;
-  height: 245px;
-}
-
-.container:hover #card::before {
+/* 光暈 提亮*/
+#cardContainer:hover #card::before {
   transition: 200ms;
   content: '';
   opacity: 80%;
 }
 
+#cardContainer:hover .canvas {
+  transition: 200ms;
+  transform: scale(1.2);
+}
+
+#cardContainer:active .canvas {
+  transition: 200ms;
+  transform: scale(1);
+}
+
+/* ===== Img in Card ===== */
+#card>img {
+  object-fit: contain;
+  border-radius: 5%;
+}
+
 /* ===== Card ===== */
 #card {
+  /* border: 5px solid white; */
   position: absolute;
   inset: 0;
   z-index: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  border-radius: 20px;
+  /* align-items: center; */
   transition: 700ms;
-  background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+  /* background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%); */
 }
 
+/* 光暈 */
 #card::before {
   content: '';
-  background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+  /* background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%); */
   filter: blur(2rem);
   opacity: 30%;
   width: 100%;
@@ -86,6 +108,7 @@
 
 /* ===== Tracker ===== */
 .tracker {
+  /* border: 1px solid violet; */
   position: absolute;
   z-index: 200;
   width: 100%;
@@ -98,9 +121,8 @@
 
 .tracker:hover~#card {
   transition: 300ms;
-  filter: brightness(1.1);
+  filter: brightness(1.2);
 }
-
 
 /* ===== Canvas ===== */
 .canvas {
