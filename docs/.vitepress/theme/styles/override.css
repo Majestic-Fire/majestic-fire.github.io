@@ -13,11 +13,12 @@ table {
 
 .VPHero .image-bg {
 	z-index: 1;
-	opacity: 0.2;
+	opacity: 0.3;
 	transition: opacity 1s ease;
 }
 
 .VPHero .image-container:hover .image-bg {
+	z-index: 1;
 	opacity: 0.5;
 }
 
