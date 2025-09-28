@@ -2,8 +2,10 @@
 import { h, watch } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-// import './style.css'
-import './styles/index.css'
+import './style.css'
+import './styles/override.css'
+// import './styles/index.css'
+// import './styles/rainbow.css'
 import profileCard from './components/profileCard.vue'
 
 let homePageStyle: HTMLStyleElement | undefined

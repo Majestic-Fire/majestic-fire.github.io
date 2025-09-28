@@ -66,12 +66,12 @@
 
 #cardContainer:hover .canvas {
   transition: 200ms;
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
 #cardContainer:active .canvas {
   transition: 200ms;
-  transform: scale(1);
+  transform: scale(0.95);
 }
 
 /* ===== Img in Card ===== */
@@ -126,6 +126,7 @@
 
 /* ===== Canvas ===== */
 .canvas {
+  transition: 200ms;
   perspective: 800px;
   inset: 0;
   z-index: 200;
